@@ -203,6 +203,76 @@ function revealFlash(card) {
     card.classList.add('revealed');
 }
 
+// View Navigation Logic
+function switchView(viewName) {
+    const explorer = document.getElementById('explorar-section');
+    const guias = document.getElementById('guias-section');
+    const perfil = document.getElementById('perfil-section');
+
+    // Hide all
+    explorer.style.display = 'none';
+    guias.style.display = 'none';
+    perfil.style.display = 'none';
+
+    // Show target
+    document.getElementById(`${viewName}-section`).style.display = 'block';
+
+    // Update navbar
+    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+    document.getElementById(`nav-${viewName}`).classList.add('active');
+
+    // Initialize content if needed
+    if (viewName === 'guias') initGuides();
+    if (viewName === 'perfil') initProfile();
+}
+
+function initGuides() {
+    const container = document.getElementById('guides-container');
+    const guides = [
+        { title: "El Filtro de 1 Minuto", desc: "Si no puedes explicar tu estrategia en un minuto, es demasiado compleja. Redúclela hasta que sea pura acción." },
+        { title: "Misión Táctica", desc: "Olvida las frases bonitas. Tu misión debe decir qué te hace diferente y cómo vas a ganar hoy." },
+        { title: "Reuniones de Impacto", desc: "Prohíbe la jerga. Exige que cada participante hable como una persona normal. La claridad ahorra millones." },
+        { title: "Encuentra tu Tren", desc: "El éxito es a menudo cuestión de subirse al tren correcto (producto o idea) en el momento justo." }
+    ];
+
+    container.innerHTML = guides.map(g => `
+        <div class="glass" style="padding: 25px; margin-bottom: 15px; border-left: 4px solid var(--secondary);">
+            <h4 style="color: var(--secondary); margin-bottom: 10px;">${g.title}</h4>
+            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.5;">${g.desc}</p>
+        </div>
+    `).join('');
+}
+
+function initProfile() {
+    const container = document.getElementById('profile-container');
+    container.innerHTML = `
+        <div class="glass" style="padding: 30px; text-align: center; margin-bottom: 20px;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 800;">A</div>
+            <h3 style="margin-bottom: 5px;">Alexwrlo</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem;">Explorador de la Simplicidad</p>
+        </div>
+        
+        <div class="glass" style="padding: 25px; margin-bottom: 15px;">
+            <p style="font-weight: 800; font-size: 0.7rem; letter-spacing: 2px; color: var(--primary); margin-bottom: 15px;">PROGRESO DEL LIBRO</p>
+            <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; position: relative; margin-bottom: 10px;">
+                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 65%; background: var(--primary); border-radius: 3px; box-shadow: 0 0 10px var(--primary);"></div>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">15 de 23 capítulos dominados</p>
+        </div>
+
+        <div class="grid">
+            <div class="glass" style="padding: 15px; text-align: center;">
+                <span style="font-size: 1.2rem; display: block; margin-bottom: 5px;">🏆</span>
+                <span style="font-size: 0.65rem; font-weight: 800;">ESTRATEGA</span>
+            </div>
+            <div class="glass" style="padding: 15px; text-align: center;">
+                <span style="font-size: 1.2rem; display: block; margin-bottom: 5px;">🔥</span>
+                <span style="font-size: 0.65rem; font-weight: 800;">LIDER</span>
+            </div>
+        </div>
+    `;
+}
+
 // Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
     initFlashcards();

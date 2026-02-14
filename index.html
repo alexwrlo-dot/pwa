@@ -21,13 +21,15 @@
     <div class="bg-gradient"></div>
     <div class="noise"></div>
 
-    <div class="container">
+    <div class="container" id="main-view">
+
         <header class="fade-in">
             <h1>Simple.</h1>
             <p>EL PODER DE LO ESENCIAL</p>
         </header>
 
-        <main>
+        <main id="explorar-section">
+
             <section class="glass hero-card fade-in" style="animation-delay: 0.2s;">
                 <span style="color: var(--primary); font-weight: 800; font-size: 0.75rem; letter-spacing: 2px;">CURACIÓN
                     PREMIUM</span>
@@ -72,20 +74,33 @@
             </section>
 
         </main>
+
+        <main id="guias-section" style="display: none; padding-top: 40px; padding-bottom: 150px;">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 25px; letter-spacing: -1px;">Guías Rápidas
+            </h2>
+            <div id="guides-container" class="fade-in"></div>
+        </main>
+
+        <main id="perfil-section" style="display: none; padding-top: 40px; padding-bottom: 150px;">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 25px; letter-spacing: -1px;">Perfil</h2>
+            <div id="profile-container" class="fade-in"></div>
+        </main>
     </div>
+
 
     <!-- Navbar Simulation -->
     <div class="navbar">
-        <div class="nav-item active">
+        <div class="nav-item active" id="nav-explorar" onclick="switchView('explorar')">
             <span>EXPLORAR</span>
         </div>
-        <div class="nav-item">
+        <div class="nav-item" id="nav-guias" onclick="switchView('guias')">
             <span>GUÍAS</span>
         </div>
-        <div class="nav-item">
+        <div class="nav-item" id="nav-perfil" onclick="switchView('perfil')">
             <span>PERFIL</span>
         </div>
     </div>
+
 
     <!-- Details View Overlay -->
     <div id="details-view">
