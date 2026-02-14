@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Simple. | Premium Guide</title>
+    <meta name="description" content="Domina la simplicidad estratégica. El poder de lo esencial basado en Jack Trout.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Outfit:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#050510">
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+    <div class="noise"></div>
+
+    <div class="container">
+        <header class="fade-in">
+            <h1>Simple.</h1>
+            <p>EL PODER DE LO ESENCIAL</p>
+        </header>
+
+        <main>
+            <section class="glass hero-card fade-in" style="animation-delay: 0.2s;">
+                <span style="color: var(--primary); font-weight: 800; font-size: 0.75rem; letter-spacing: 2px;">CURACIÓN
+                    PREMIUM</span>
+                <h2 style="margin-top: 10px;">Domina el Arte.</h2>
+                <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6;">La complejidad es el refugio de
+                    los inseguros. La simplicidad es la marca de la verdadera maestría estratégica.</p>
+            </section>
+
+            <div class="grid">
+                <div class="card glass fade-in" style="animation-delay: 0.4s;" onclick="showDetail('fundamentos')">
+                    <div style="color: var(--primary); font-size: 2rem; margin-bottom: 10px;">✦</div>
+                    <h3>Fundamentos</h3>
+                </div>
+                <div class="card glass fade-in" style="animation-delay: 0.5s;" onclick="showDetail('management')">
+                    <div style="color: var(--secondary); font-size: 2rem; margin-bottom: 10px;">⌬</div>
+                    <h3>Management</h3>
+                </div>
+                <div class="card glass fade-in" style="animation-delay: 0.6s;" onclick="showDetail('liderazgo')">
+                    <div style="color: var(--accent); font-size: 2rem; margin-bottom: 10px;">★</div>
+                    <h3>Liderazgo</h3>
+                </div>
+                <div class="card glass fade-in" style="animation-delay: 0.7s;" onclick="showDetail('exito')">
+                    <div style="color: #fff; font-size: 2rem; margin-bottom: 10px;">☀</div>
+                    <h3>El Éxito</h3>
+                </div>
+            </div>
+
+            <div class="glass fade-in"
+                style="padding: 24px; margin-top: 20px; animation-delay: 0.9s; text-align: center;">
+                <p style="font-size: 0.9rem; font-weight: 600;">"La simplicidad es la máxima sofisticación"</p>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">- Leonardo da Vinci</span>
+            </div>
+
+            <!-- Flashcards Section -->
+            <section class="flash-section fade-in" style="animation-delay: 1.1s;">
+                <h3
+                    style="margin-bottom: 20px; font-weight: 800; font-size: 1.1rem; text-align: center; letter-spacing: 1px;">
+                    DESCUBRE EL MENSAJE</h3>
+                <div class="flash-grid" id="flash-container">
+                    <!-- Injected by JS -->
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Navbar Simulation -->
+    <div class="navbar">
+        <div class="nav-item active">
+            <span>EXPLORAR</span>
+        </div>
+        <div class="nav-item">
+            <span>GUÍAS</span>
+        </div>
+        <div class="nav-item">
+            <span>PERFIL</span>
+        </div>
+    </div>
+
+    <!-- Details View Overlay -->
+    <div id="details-view">
+        <div id="detail-dynamic-content">
+            <!-- Content injected by JS -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js');
+            });
+        }
+    </script>
+</body>
+
+</html>

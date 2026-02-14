@@ -1,0 +1,17 @@
+{
+  "name": "El Poder de lo Simple",
+  "short_name": "Simple.",
+  "description": "Una guía para dominar la simplicidad en la era de la complejidad.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0c",
+  "theme_color": "#ff007a",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3064/3064155.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
